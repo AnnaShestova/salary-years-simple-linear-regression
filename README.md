@@ -23,9 +23,10 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 1/3, rando
 
 from sklearn.linear_model import LinearRegression   
 regressor = LinearRegression()    
-regressor.fit(X_train, y_train)   
+regressor.fit(X_train, y_train)  
 
-y_pred = regressor.predict(X_test)    
+## Predicting the Test set results  
+y_pred = regressor.predict(X_test)       
 
 ## Visualizing Training set results
 plt.scatter(X_train, y_train, color = 'red')    
@@ -33,7 +34,9 @@ plt.plot(X_train, regressor.predict(X_train), color = 'blue')
 plt.title('Salary vs Experience {Training set}')    
 plt.xlabel('Years of experience')   
 plt.ylabel('Salary')
-plt.show()
+plt.show()      
+
+![Image](https://github.com/AnnaShestova/salary-years-simple-linear-regression/blob/master/images/Py%20-%20Salary%20vs%20Experience%20%7BTraining%20set%7D.png?raw=true)  
 
 ## Visualizing Test set results
 plt.scatter(X_test, y_test, color = 'red')    
@@ -42,6 +45,8 @@ plt.title('Salary vs Experience {Test set}')
 plt.xlabel('Years of experience')   
 plt.ylabel('Salary')    
 plt.show()    
+
+![Image](https://github.com/AnnaShestova/salary-years-simple-linear-regression/blob/master/images/Py%20-%20Salary%20vs%20Experience%20%7BTest%20set%7D.png?raw=true)  
 
 ###########################################################################################
 # Simple linear Regression in R
@@ -60,7 +65,9 @@ test_set = subset(dataset, split == FALSE)
 
 ## Applying simple linear regression
 regressor = lm(formula = Salary ~ YearsExperience,    
-               data = training_set)   
+               data = training_set)
+       
+## Predicting the Test set results
  y_pred = predict(regressor, newdata = test_set)    
  
 ## Visualising the Training set results
@@ -74,7 +81,9 @@ ggplot() +
             colour = 'blue') +    
   ggtitle('Salary vs Experience (Training set)') +    
   xlab('Years of experience') +   
-  ylab('Salary')    
+  ylab('Salary')  
+  
+![Image](https://github.com/AnnaShestova/salary-years-simple-linear-regression/blob/master/images/R%20-%20Salary%20vs%20Experience%20%7BTraining%20set%7D.png?raw=true) 
 
 ## Visualizing Test set results
 ggplot() +
@@ -86,3 +95,5 @@ ggplot() +
   ggtitle('Salary vs Experience (Test set)') +    
   xlab('Years of experience') +   
   ylab('Salary')    
+  
+ ![Image](https://github.com/AnnaShestova/salary-years-simple-linear-regression/blob/master/images/R%20-%20Salary%20vs%20Experience%20%7BTest%20set%7D.png?raw=true) 
